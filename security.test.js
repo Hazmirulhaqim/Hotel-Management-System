@@ -1,4 +1,4 @@
-const MongoClient = require("mongodb").MongoClient;
+const MongoClient   = require("mongodb").MongoClient;
 const Management    = require("./security")
 
 const jwt = require('jsonwebtoken');
@@ -8,8 +8,7 @@ function generateAccessToken(payload) {
     return jwt.sign(payload, "secretkey", {expiresIn:'1h'});
 }
 
-
-describe("Management", () => {
+describe("Management Details", () => {
     let client;
     beforeAll(async () => {
         client = await MongoClient.connect(
@@ -24,12 +23,12 @@ describe("Management", () => {
     })
   
     test("Management login successfully", async () => {
-        const res = await Management.logins("abdul a", "abdul167")
+        const res = await Management.logins("chus", "chus56")
         expect(res).toBe("Login Management Success")
     })
 })
 
-function verifyToken(req,res,next){
+    function verifyToken(req,res,next){
     const authHeader=req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1]
   
