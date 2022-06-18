@@ -131,53 +131,53 @@ app.post('/register/user', async (req, res) => {
     }
 })
 
-// /**
-//  * @swagger
-//  * components:
-//  *   schemas:
-//  *     User:
-//  *       type: object
-//  *       properties:
-//  *         username: 
-//  *           type: string
-//  *         password: 
-//  *           type: string
-//  *         User ID:
-//  *           type: string
-//  *         User Name:
-//  *           type: string
-//  */
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     User:
+ *       type: object
+ *       properties:
+ *         username: 
+ *           type: string
+ *         password: 
+ *           type: string
+ *         User ID:
+ *           type: string
+ *         User Name:
+ *           type: string
+ */
 
-// /**
-//  * @swagger
-//  * /register:
-//  *   post:
-//  *     description: Register Login
-//  *     requestBody:
-//  *       required: true
-//  *       content:
-//  *         application/json:
-//  *           schema: 
-//  *             type: object
-//  *             properties:
-//  *               username: 
-//  *                 type: string
-//  *               password: 
-//  *                 type: string
-//  *               User ID:
-//  *                 type: string
-//  *               User Name:
-//  *                 type: string
-//  *     responses:
-//  *       200:
-//  *         description: Successful Register User
-//  *         content:
-//  *           application/json:
-//  *             schema:
-//  *               $ref: '#/components/schemas/User'
-//  *       401:
-//  *         description: Invalid username or password
-//  */
+/**
+ * @swagger
+ * /register:
+ *   post:
+ *     description: Register Login User
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema: 
+ *             type: object
+ *             properties:
+ *               username: 
+ *                 type: string
+ *               password: 
+ *                 type: string
+ *               User ID:
+ *                 type: string
+ *               User Name:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Successful Register User
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/User'
+ *       401:
+ *         description: Invalid username or password
+ */
 
 
 //DELETE USER
@@ -198,45 +198,45 @@ app.delete('/delete/user', async (req, res) => {
 		} 
 })
 
-// /**
-//  * @swagger
-//  * components:
-//  *   schemas:
-//  *     User:
-//  *       type: object
-//  *       properties:
-//  *         username: 
-//  *           type: string
-//  *         password: 
-//  *           type: string
-//  */
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     User:
+ *       type: object
+ *       properties:
+ *         username: 
+ *           type: string
+ *         password: 
+ *           type: string
+ */
 
-// /**
-//  * @swagger
-//  * /delete:
-//  *   delete:
-//  *     description: User Delete
-//  *     requestBody:
-//  *       required: true
-//  *       content:
-//  *         application/json:
-//  *           schema: 
-//  *             type: object
-//  *             properties:
-//  *               username: 
-//  *                 type: string
-//  *               password: 
-//  *                 type: string
-//  *     responses:
-//  *       200:
-//  *         description: Successful delete user
-//  *         content:
-//  *           application/json:
-//  *             schema:
-//  *               $ref: '#/components/schemas/User'
-//  *       401:
-//  *         description: Invalid username or password
-//  */
+/**
+ * @swagger
+ * /delete:
+ *   delete:
+ *     description: User Delete
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema: 
+ *             type: object
+ *             properties:
+ *               username: 
+ *                 type: string
+ *               password: 
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Successful delete user
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/User'
+ *       401:
+ *         description: Invalid username or password
+ */
 
 //SECURITY LOGIN
 app.post('/login/security', async (req, res) => {
@@ -258,56 +258,56 @@ app.post('/login/security', async (req, res) => {
     }
 })
 
-// /**
-//  * @swagger
-//  * components:
-//  *   schemas:
-//  *     Security:
-//  *       type: object
-//  *       properties:
-//  *         username: 
-//  *           type: string
-//  *         password: 
-//  *           type: string
-//  *         Management Contact:
-//  *           type: string
-//  *         Management Name:
-//  *           type: string
-//  */
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Security:
+ *       type: object
+ *       properties:
+ *         username: 
+ *           type: string
+ *         password: 
+ *           type: string
+ *         Management Contact:
+ *           type: string
+ *         Management Name:
+ *           type: string
+ */
 
-// /**
-//  * @swagger
-//  * /login/security:
-//  *   post:
-//  *     description: Security Login
-//  *     requestBody:
-//  *       required: true
-//  *       content:
-//  *         application/json:
-//  *           schema: 
-//  *             type: object
-//  *             properties:
-//  *               username: 
-//  *                 type: string
-//  *               password: 
-//  *                 type: string
-//  *               Management Contact:
-//  *                 type: string
-//  *               Management Name:
-//  *                 type: string
-//  *     responses:
-//  *       200:
-//  *         description: Successful login management
-//  *         content:
-//  *           application/json:
-//  *             schema:
-//  *               $ref: '#/components/schemas/Security'
-//  *       401:
-//  *         description: Invalid username or password
-//  */
+/**
+ * @swagger
+ * /login/security:
+ *   post:
+ *     description: Security Login
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema: 
+ *             type: object
+ *             properties:
+ *               username: 
+ *                 type: string
+ *               password: 
+ *                 type: string
+ *               Management Contact:
+ *                 type: string
+ *               Management Name:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Successful login management
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Security'
+ *       401:
+ *         description: Invalid username or password
+ */
 
 
-//REGISTER CLIENT 
+//REGISTER VISITOR 
 app.post('/register/visitor', async (req, res) => {
     const regvstr = await Visitor.VisitorRegister(req.body.idVisitor, req.body.nameVisitor, req.body.email, req.body.room, req.body.floor)
     if(req.user.role == "user"){
@@ -321,57 +321,57 @@ app.post('/register/visitor', async (req, res) => {
     	return res.status(403).send('Unauthorized')}
 })
 
-// /**
-//  * @swagger
-//  * components:
-//  *   schemas:
-//  *     Visitor:
-//  *       type: object
-//  *       properties:
-//  *         Visitor ID:
-//  *           type: string
-//  *         Visitor Name:
-//  *           type: string
-//  *         Visitor email:
-//  *           type: string
-//  *         Visitor Room:
-//  *           type: string
-//  *         Visitor Floor:
-//  *           type: string
-//  */
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Visitor:
+ *       type: object
+ *       properties:
+ *         Visitor ID:
+ *           type: string
+ *         Visitor Name:
+ *           type: string
+ *         Visitor email:
+ *           type: string
+ *         Visitor Room:
+ *           type: string
+ *         Visitor Floor:
+ *           type: string
+ */
 
-// /**
-//  * @swagger
-//  * /register/visitor:
-//  *   post:
-//  *     description: Register Login Visitor
-//  *     requestBody:
-//  *       required: true
-//  *       content:
-//  *         application/json:
-//  *           schema: 
-//  *             type: object
-//  *             properties:
-//  *        		 Visitor ID:
-//  *          	   type: string
-//  *         		 Visitor Name:
-//  *           	   type: string
-//  *               Visitor email:
-//  *                 type: string
-//  *               Visitor Room:
-//  *                 type: string
-//  *               Visitor Floor:
-//  *                 type: string
-//  *     responses:
-//  *       200:
-//  *         description: Successful Register Visitor
-//  *         content:
-//  *           application/json:
-//  *             schema:
-//  *               $ref: '#/components/schemas/Visitor'
-//  *       401:
-//  *         description: Invalid username or password
-//  */
+/**
+ * @swagger
+ * /register/visitor:
+ *   post:
+ *     description: register visitor
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema: 
+ *             type: object
+ *             properties:
+ *               Visitor ID:
+ *                 type: string
+ *               Visitor Name:
+ *                 type: string
+ *               Visitor email:
+ *                 type: string
+ *               Visitor Room:
+ *                 type: string
+ *               Visitor Floor:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Visitor registered
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Visitor'
+ *       401:
+ *         description: Invalid username or password
+ */
 
 //UPDATE VISITOR ROOM
 app.patch('/update/visitor/room', async (req, res) => {
@@ -393,57 +393,57 @@ app.patch('/update/visitor/room', async (req, res) => {
 })
 
 
-// /**
-//  * @swagger
-//  * components:
-//  *   schemas:
-//  *     Visitor:
-//  *       type: object
-//  *       properties:
-//  *         Visitor ID:
-//  *           type: string
-//  *         Visitor Name:
-//  *           type: string
-//  *         Visitor email:
-//  *           type: string
-//  *         Visitor Room:
-//  *           type: string
-//  *         Visitor Floor:
-//  *           type: string
-//  */
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Visitor:
+ *       type: object
+ *       properties:
+ *         Visitor ID:
+ *           type: string
+ *         Visitor Name:
+ *           type: string
+ *         Visitor email:
+ *           type: string
+ *         Visitor Room:
+ *           type: string
+ *         Visitor Floor:
+ *           type: string
+ */
 
-// /**
-//  * @swagger
-//  * /update/visitor/Date:
-//  *   patch:
-//  *     description: Update Client Date
-//  *     requestBody:
-//  *       required: true
-//  *       content:
-//  *         application/json:
-//  *           schema: 
-//  *             type: object
-//  *             properties:
-//  *               Visitor ID:
-//  *                 type: string
-//  *               Visitor Name:
-//  *                 type: string
-//  *               Visitor email:
-//  *                 type: string
-//  *               Visitor Room:
-//  *                 type: string
-//  *               Visitor Floor:
-//  *                 type: string
-//  *     responses:
-//  *       200:
-//  *         description: Room updated
-//  *         content:
-//  *           application/json:
-//  *             schema:
-//  *               $ref: '#/components/schemas/Visitor'
-//  *       401:
-//  *         description: Invalid username or password
-//  */
+/**
+ * @swagger
+ * /update/visitor/room:
+ *   patch:
+ *     description: Update Visitor Room
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema: 
+ *             type: object
+ *             properties:
+ *               Visitor ID:
+ *                 type: string
+ *               Visitor Name:
+ *                 type: string
+ *               Visitor email:
+ *                 type: string
+ *               Visitor Room:
+ *                 type: string
+ *               Visitor Floor:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Room updated
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Visitor'
+ *       401:
+ *         description: Invalid username or password
+ */
 
 
 //UPDATE VISITOR FLOOR
@@ -465,57 +465,57 @@ app.patch('/update/visitor/floor', async (req, res) => {
   	}
 })
 
-// /**
-//  * @swagger
-//  * components:
-//  *   schemas:
-//  *     Visitor:
-//  *       type: object
-//  *       properties:
-//  *         Visitor ID:
-//  *           type: string
-//  *         Visitor Name:
-//  *           type: string
-//  *         Visitor email:
-//  *           type: string
-//  *         Visitor Room:
-//  *           type: string
-//  *         Visitor Floor:
-//  *           type: string
-//  */
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Visitor:
+ *       type: object
+ *       properties:
+ *         Visitor ID:
+ *           type: string
+ *         Visitor Name:
+ *           type: string
+ *         Visitor email:
+ *           type: string
+ *         Visitor Room:
+ *           type: string
+ *         Visitor Floor:
+ *           type: string
+ */
 
-// /**
-//  * @swagger
-//  * /update/visitor/Time:
-//  *   patch:
-//  *     description: Update Client Time
-//  *     requestBody:
-//  *       required: true
-//  *       content:
-//  *         application/json:
-//  *           schema: 
-//  *             type: object
-//  *             properties:
-//  *               Visitor ID:
-//  *                 type: string
-//  *               Visitor Name:
-//  *                 type: string
-//  *               Visitor email:
-//  *                 type: string
-//  *               Visitor Room:
-//  *                 type: string
-//  *               Visitor Floor:
-//  *                 type: string
-//  *     responses:
-//  *       200:
-//  *         description: Floor updated
-//  *         content:
-//  *           application/json:
-//  *             schema:
-//  *               $ref: '#/components/schemas/Visitor'
-//  *       401:
-//  *         description: Invalid username or password
-//  */
+/**
+ * @swagger
+ * /update/visitor/floor:
+ *   patch:
+ *     description: Update Floor
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema: 
+ *             type: object
+ *             properties:
+ *               Visitor ID:
+ *                 type: string
+ *               Visitor Name:
+ *                 type: string
+ *               Visitor email:
+ *                 type: string
+ *               Visitor Room:
+ *                 type: string
+ *               Visitor Floor:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Floor updated
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Visitor'
+ *       401:
+ *         description: Invalid username or password
+ */
 
 //DELETE VISITOR
 app.delete('/delete/visitor', async (req, res) => {
@@ -536,45 +536,45 @@ app.delete('/delete/visitor', async (req, res) => {
 	} 
 })
 
-// /**
-//  * @swagger
-//  * components:
-//  *   schemas:
-//  *     Visitor:
-//  *       type: object
-//  *       properties:
-//  *         Visitor ID: 
-//  *           type: string
-//  *         Visitor Name: 
-//  *           type: string
-//  */
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Visitor:
+ *       type: object
+ *       properties:
+ *         Visitor ID: 
+ *           type: string
+ *         Visitor Name: 
+ *           type: string
+ */
 
-// /**
-//  * @swagger
-//  * /delete/visitor:
-//  *   delete:
-//  *     description: Client Deleted
-//  *     requestBody:
-//  *       required: true
-//  *       content:
-//  *         application/json:
-//  *           schema: 
-//  *             type: object
-//  *             properties:
-//  *               Visitor ID: 
-//  *                 type: string
-//  *               Visitor Name: 
-//  *                 type: string
-//  *     responses:
-//  *       200:
-//  *         description: Successful delete visitor
-//  *         content:
-//  *           application/json:
-//  *             schema:
-//  *               $ref: '#/components/schemas/Visitor'
-//  *       401:
-//  *         description: Invalid username or password
-//  */
+/**
+ * @swagger
+ * /delete/visitor:
+ *   delete:
+ *     description: Visitor Deleted
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema: 
+ *             type: object
+ *             properties:
+ *               Visitor ID: 
+ *                 type: string
+ *               Visitor Name: 
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Successful delete visitor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Visitor'
+ *       401:
+ *         description: Invalid username or password
+ */
 
 
 app.listen(port, () => {
