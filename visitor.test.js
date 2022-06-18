@@ -1,82 +1,95 @@
-const MongoClient   = require("mongodb").MongoClient;
-const Visitor       = require("./visitor")
-const { faker }     = require('@faker-js/faker');
+let visitors;
+class Visitor {
+	static async injectDB(conn) {
+		visitors = await conn.db("Tiara-Resort").collection("visitor")}
 
-// const idClient      = faker.random.numeric(4);
-// const nameClient    = faker.name.findName();
-// const age           = faker.random.numeric(2);
-// const gender        = faker.name.gender(true);
-// const contactClient = faker.phone.phoneNumber();
-// const company       = faker.company.bs();
-// const idApp         = faker.random.numeric(6);
-// const date          = faker.date.soon() ;
-// const time          = faker.address.timeZone ;
-//const purpose       = faker; 
-
-describe("VISITOR DETAILS", () => {
-	let visitor;
-	beforeAll(async () => {
-		visitor = await MongoClient.connect(
-			"mongodb+srv://m001-student:m001-mongodb-basics@sandbox.wigci.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-			{ useNewUrlParser: true },
-		);
-		Visitor.injectDB(visitor);
-	})
-
-	afterAll(async () => {
-		await visitor.close();
-	})
-
-    test("New Visitor Registration", async () => {
-        const res = await Visitor.VisitorRegister("8765", "ketam" ,"ketamranggi69@gmail.com" ,"A022","F1")
-        expect(res).toBe("new visitor registered")
-    })
-
-
-//   test("User duplicate staff number", async () => {
-//     const res = await Visitor.VisitorRegister("Messi", "0187261523" ,"30" ,"Lestari","2.00PM","20/10/2022","Thiago","Father","Family","300A")
-//     expect(res).toBe("visit id existed")
-//   })
-
-//   test("Find Client", async () => {
-//     const res = await Visitor.vwvisitor("Arthur Shelby")
-//     expect(res.id).toBe(nameClient),
-//     expect(res.name).toBe(nameClient),
-// 	expect(res.phonenumber).toBe(phonenumber),
-// 	expect(res.visitid).toBe(visitid),
-// 	expect(res.block).toBe(block),
-// 	expect(res.time).toBe(time),
-// 	expect(res.date).toBe(date),
-// 	expect(res.tovisit).toBe(tovisit),
-// 	expect(res.Relationship).toBe(Relationship),
-// 	expect(res.reason).toBe(reason),
-// 	expect(res.parking).toBe(parking)
-//   })
-
-    test("No visitor", async () => {
-        const res = await Visitor.vwvisitor("paan")
-        expect(res).toBe("Username cannot be found")
-    })
+    //REGISTER VISITOR
+    static async VisitorRegister(idVisitor, nameVisitor, email, room, floor) 
+    {
+        return visitors.findOne({        
+        'Visitor Name': nameVisitor,    
+        }).then(async user =>{
     
-    test("UPDATE ROOM", async()=>{
-        const res = await Visitor.updateroom("ketam","A023")
-        expect(res.name).toBe("ketam"),
-        expect(res.room).toBe("A023")
-    })
+        if (user) {
+        if (user.idVisitor == idVisitor ){
+            return "visitor id existed"
+        }
+        }
+        else
+        {
+            await visitors.insertOne({      
+            "Visitor ID"			: idVisitor,
+            "Visitor Name"      	: nameVisitor,
+            "Visitor Email"			: email,
+            
+      
+            "Visitor room"		    : room,
+            "Visitor Floor"		    : floor,
+            })
 
-    test("UPDATE FLOOR", async()=>{
-        const res = await Visitor.updatefloor("ketam","F2")
-        expect(res.name).toBe("ketam"),
-        expect(res.floor).toBe("F2")
-    })
+            return "new visitor registered"
+        }
+        }) 
+    }
 
-    test("DELETE", async () => {
-        const res = await Visitor.delete("aina")
-        expect(res.nameClient).toBe("aina")
-    });
+    //VIEW VISITOR
+    static async vwvisitor(nameVisitor){
+        const exist= await visitors.findOne({"Visitor Name" : nameVisitor})
+           if(exist){
+             const user = await visitors.findOne(
+               {"Visitor Name" : nameVisitor}
+               ).then(result=>{ 
+                 console.log(result)})
+               return exist
+           }
+           else{
+             return "Username cannot be found"
+              }
+      }
+    
+    
+    //UPDATE VISITOR ROOM
+    static async updateroom(nameVisitor,room) {
+        const exist = await visitors.findOne({name: nameVisitor})
+        if(exist){
+            const data = await visitors.updateOne({"Visitor Name" : nameVisitor},
+            {"$set":{ "Room" : room}} 
+            ).then(result=>{ 
+                console.log(result)})
+                return exist
+        }
+        else{
+           return "Visitor is not exist"}     
+    }
 
-    test("View",  async () => {
-        const res = await Visitor.vwvisitor("adibah")
-        expect(res.username).toBe("adibah")
-    })
-})
+    //UPDATE FLOOR
+    static async updatefloor(nameVisitor,floor) {
+        const exist= await visitors.findOne({"Visitor Name": nameVisitor})
+        if(exist){
+            const data= await visitors.updateOne(
+            {"Visitor Name" : nameVisitor},
+            {"$set":{ floor:floor}}
+            ).then(result=>{ 
+                console.log(result)})
+                return exist
+        }
+        else{
+            return "Visitor is not exist"
+        }           
+    }
+
+
+    //DELETE VISITOR
+    static async delete(nameVisitor) {
+    const exist= await visitors.findOne({"Visitor Name": nameVisitor})
+        if(exist){
+            const data = await visitors.deleteOne({"Visitor Name" : nameVisitor})
+                return exist
+        }
+        else{
+            return "Visitor is not exist"
+        }
+    }
+}
+
+module.exports = Visitor;
