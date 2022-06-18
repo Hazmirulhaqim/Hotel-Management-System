@@ -1,7 +1,7 @@
 let visitors;
 class Visitor {
 	static async injectDB(conn) {
-		visitors = await conn.db("Tiara Resort").collection("visitor")}
+		visitors = await conn.db("Tiara-Resort").collection("visitor")}
 
     //REGISTER VISITOR
     static async VisitorRegister(idVisitor, nameVisitor, email, room, floor) 
@@ -49,7 +49,7 @@ class Visitor {
     
     
     //UPDATE VISITOR ROOM
-    static async updatedate(nameVisitor,room) {
+    static async updateroom(nameVisitor,room) {
         const exist = await visitors.findOne({name: nameVisitor})
         if(exist){
             const data = await visitors.updateOne({"Visitor Name" : nameVisitor},
@@ -63,7 +63,7 @@ class Visitor {
     }
 
     //UPDATE FLOOR
-    static async updatetime(nameVisitor,floor) {
+    static async updatefloor(nameVisitor,floor) {
         const exist= await visitors.findOne({"Visitor Name": nameVisitor})
         if(exist){
             const data= await visitors.updateOne(
