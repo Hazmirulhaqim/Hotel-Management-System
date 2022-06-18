@@ -47,7 +47,7 @@ app.post('/login/user', async (req, res) => {
 	//console.log(req.body)
 	let user = await User.login(req.body.username, req.body.password, req.body.id, req.body.name, req.body.role)
 	if (user == "invalid password" || user == "invalid username"){
-		res.status(404).send("Login failed")
+		res.status(404)
 	}
 	else{
 		return res.status(200).json({
