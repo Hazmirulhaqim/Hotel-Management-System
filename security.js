@@ -1,12 +1,12 @@
-let management;
+let security;
 const bcrypt = require("bcryptjs")
 
-class Management{
+class Security{
     static async injectDB(conn) {
-        management = await conn.db("Tiara Resort").collection("security")}
+        security = await conn.db("Tiara-Resort").collection("management")}
 
     static async logins(usernameManagement,passwordManagement){
-        return management.findOne({         
+        return security.findOne({         
             'Management username' : usernameManagement
         }).then(async user =>{
     
@@ -20,9 +20,8 @@ class Management{
         else{
             return "Login Management Success";
         }    
-
         })
     }
 }
 
-module.exports = Management;
+module.exports = Security;
