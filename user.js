@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 
 class User {
 	static async injectDB(conn) {
-		users = await conn.db("Tiara Resort").collection("staff")
+		users = await conn.db("Tiara-Resort").collection("staff")
 	}
 
    
