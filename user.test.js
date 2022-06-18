@@ -28,18 +28,18 @@ describe("User Details", () => {
 	})
 
 	test("User login successfully", async () => {
-		const res = await User.login("Carmine14", "$2a$10$m1haioUUeE0D4JeTFkkw9ufu8rZKZKq4iaT5wd9lta.V0P90wsF5q")
+		const res = await User.login("Oswald74", "$2a$10$32fQJZG9XzaqTziXE0yleOFhKV3HLz48NkrAPYBcV2AoxAFeagapy")
         expect(res).toBe("Login User Success")
   	})
 
 	test("User login failed", async () => {
-		const res = await User.login("Megane96", "1235")
+		const res = await User.login("Oswald74", "1235")
 		expect(res).toBe("invalid password")
 	})
 
 	test("New User registration", async () => {
 		const res = await User.register(username, password ,id, name, "user")
-		expect(res).toBe("new staff registered")
+		expect(res).toBe("new user registered")
 	})
 
 	test("Duplicate username", async () => {
@@ -48,13 +48,13 @@ describe("User Details", () => {
 	})
 
 	test("Delete User", async () => {
-		const res = await User.delete("Albertha5")
+		const res = await User.delete("Princess.Trantow20")
 		expect(res).toBe("delete data successfully")
 	})
 
 	test("View",  async () => {
-		const res = await User.view("Megane96")
-		expect(res.username).toBe("Megane96")
+		const res = await User.view("Oswald74")
+		expect(res.username).toBe("Oswald74")
 	})
 
 	});
